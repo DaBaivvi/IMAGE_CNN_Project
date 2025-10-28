@@ -46,21 +46,6 @@ for i in range(num_images):
     plt.axis('off')
     plt.imshow(image, camp='gray')
 
-import matplotlib.pyplot as plt
-
-plt.figure(figsize=(40, 40))
-
-num_images = 20
-for i in range(num_images):
-    row = x_train[i]
-    label = y_train[i]
-
-    image = row.reshape(20, 20)
-    plt.subplot(1, num_images, i+1)
-    plt.title(label, fontdict={'fontsize': 30})
-    plt.axis('off')
-    plt.imshow(image, camp='gray')
-
 #Normalize the image data
 x_train.min()
 y_train.max()
@@ -69,7 +54,6 @@ x_train = train_df.values / 255
 x_valid = valid_df.values / 255
 
 #Custom Datasets
-
 class MyDataset(Dataset):
     def _init_(self, x_df, y_df):
         self.xs = torch.tensor(x_df).float().to(device)
@@ -96,11 +80,11 @@ valid_N = len(valid_data.dataset)
 
 train_loader
 
-#iterable
+#Iterable
 batch = next(iter(train_loader))
 batch
 
-#batch has 2 values (x, y). The first dimension of each should have 32 values, which is the batch_size
+#Batch has 2 values (x, y). The first dimension of each should have 32 values, which is the batch_size
 batch[0].shape
 batch[1].shape
 
@@ -116,7 +100,7 @@ model = nn.Sequential(
     nn.ReLU(),
     nn.Linear(512, n_classes)
 )
- #combine compiling the model and sending it to the GPU in one step
+#Combine compiling the model and sending it to the GPU in one step
 model = torch.complie(model.to(device))
 model
 
