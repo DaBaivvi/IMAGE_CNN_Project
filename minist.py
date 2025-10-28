@@ -9,7 +9,7 @@ import torchvision.transforms.v2 as transforms
 import torchvision.transform.funtional as F
 import matplotlib.pyplot as plt
 
-#In PyTorch, we can use our GPU in our operations by setting the device to cuda. The function torch.cuda.is_available() will confirm PyTorch can recognize the GPU.
+#In PyTorch, use GPU in our operations by setting the device to cuda. The function torch.cuda.is_available() will confirm PyTorch can recognize the GPU.
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 torch.cuda.is_avaliable()
 
